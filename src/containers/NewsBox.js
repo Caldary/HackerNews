@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NewsList from '../components/NewsList';
+import Header from '../components/Header';
 
 class NewsBox extends Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class NewsBox extends Component {
     this.state = {
       news: []
     }
+    this.handleSelectFilter = this.handleSelectFilter.bind(this);
   }
 
   fetchStories() {
@@ -29,12 +31,25 @@ class NewsBox extends Component {
     this.fetchStories()
   }
 
+  handleSelectFilter(event){
+    const filter = event.target.value;
+    let filteredNews = [];
+    if(filter === "title") {
+      filteredNews = this.state.news.sort((el1, el2) => el1[filter].localeCompare(el2[filter]));
+    }
+    else {
+      filteredNews = this.state.news.sort((el1, el2) => el2[filter] - el1[filter]);
+    }
+    this.setState({news: filteredNews});
+  }
+
   render() {
     return (
-        <>
-            <h1>CodeClan Reddit2.0</h1>
-            <NewsList news={this.state.news}/>
-        </>
+      <div className="news-box">
+        <h1>CodeClan Reddit2.0</h1>
+        <Header handleSelectFilter={this.handleSelectFilter}/>
+        <NewsList news={this.state.news}/>
+      </div>
     )
   }
 }

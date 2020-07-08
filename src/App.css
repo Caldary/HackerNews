@@ -1,3 +1,11 @@
+#news-list {
+  border: tomato;
+}
+
+#news-box {
+  border: yellow;
+}
+
 .App {
   text-align: center;
 }

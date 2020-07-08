@@ -2,7 +2,8 @@ import React from "react";
 import News from "./News";
 
 const NewsList = (props) => {
-   const newsNode = props.news.map(newsItem => {
+
+   const newsNodes = props.news.map(newsItem => {
        return(
            <News 
                 title={newsItem.title} 
@@ -13,9 +14,11 @@ const NewsList = (props) => {
            </News>
        )
    })
-  
+
     return (
-        <ol>{newsNode}</ol>
+        <div className="news-list">
+        <ol>{newsNodes}</ol>
+        </div>
     )
 }
 
