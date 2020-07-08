@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-    <NewsBox />
+    <NewsBox id="news-box" />
   );
 }
 

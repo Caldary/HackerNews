@@ -47,7 +47,7 @@ class NewsBox extends Component {
     return (
       <div className="news-box">
         <h1>CodeClan Reddit2.0</h1>
-        <Header handleSelectFilter={this.handleSelectFilter}/>
+        <Header defaultValue="default" handleSelectFilter={this.handleSelectFilter}/>
         <NewsList news={this.state.news}/>
       </div>
     )
