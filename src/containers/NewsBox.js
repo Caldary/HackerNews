@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NewsList from '../components/NewsList';
 import Header from '../components/Header';
 
+
 class NewsBox extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +47,6 @@ class NewsBox extends Component {
   render() {
     return (
       <div className="news-box">
-        <h1>CodeClan Reddit2.0</h1>
         <Header defaultValue="default" handleSelectFilter={this.handleSelectFilter}/>
         <NewsList news={this.state.news}/>
       </div>
