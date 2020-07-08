@@ -31,7 +31,10 @@ class NewsBox extends Component {
 
   render() {
     return (
-      <NewsList news={this.state.news}/>
+        <>
+            <h1>CodeClan Reddit2.0</h1>
+            <NewsList news={this.state.news}/>
+        </>
     )
   }
 }
