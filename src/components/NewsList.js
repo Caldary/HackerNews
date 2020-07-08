@@ -1,20 +1,23 @@
 import React from "react";
 import News from "./News";
 
-const NewsList = ({news}) => {
-    // const NewsNodes = news.map(news => {
-    //     return (
-    //         <News key={news.id} title={news.title}> 
-    //             {news.url}
-    //         </News>
-    //     );
-    //     });
+const NewsList = (props) => {
+   const newsNode = props.news.map(newsItem => {
+       return(
+           <News 
+                title={newsItem.title} 
+                url={newsItem.url} 
+                score={newsItem.score} 
+                key={newsItem.id}
+                author={newsItem.by}  >
+           </News>
+       )
+   })
+  
+    return (
+        <ol>{newsNode}</ol>
+    )
+}
 
-        return (
-            <h3>
-                hello
-            </h3>
-        )
-    } 
 
-    export default NewsList;
+export default NewsList;

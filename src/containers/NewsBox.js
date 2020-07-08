@@ -31,7 +31,7 @@ class NewsBox extends Component {
 
   render() {
     return (
-      <NewsList />
+      <NewsList news={this.state.news}/>
     )
   }
 }
